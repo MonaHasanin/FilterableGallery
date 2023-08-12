@@ -1,20 +1,31 @@
-const about = document.querySelector(".about");
-const btns = document.querySelectorAll(".tab-btn");
-const articles = document.querySelectorAll(".content");
+// has been modified
+let about = document.querySelector(".about");
+let btns = document.querySelectorAll(".tab-btn");
+let articles = document.querySelectorAll(".content");
 
-about.addEventListener("click", function (e) {
-  const id = e.target.dataset.id;
+about.addEventListener("click", function(e)  {
+  // has been modified
+  let id = e.target.dataset.id;
+
+//  console.log(id); للتأكد فقط من أن الكود يعمل بشكل صحيح
+
   if (id) {
-    // remove selected from other buttons
-    btns.forEach(function (btn) {
+    // Remove 'active' class from other buttons
+    btns.forEach(function(btn) {
       btn.classList.remove("active");
-    });
     e.target.classList.add("active");
-    // hide other articles
-    articles.forEach(function (article) {
+
+    });
+    // Add 'active' class to clicked button
+
+    // Hide other articles
+    articles.forEach(function(article) {
       article.classList.remove("active");
     });
-    const element = document.getElementById(id);
-    element.classList.add("active");
+
+    // Find the element class
+    // has been modified
+    let element = document.querySelector(id);
+      element.classList.add("active");
   }
 });
